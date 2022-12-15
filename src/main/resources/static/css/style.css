@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.page-top{
+    margin-top: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 
+エラーログ 
+*/
+.red{
+    color: red;
+    margin: auto;
+}
+
+.invalid{
+    border:2px solid red;
+}
+
+.error-message{
+	color: red;
+	font-size: 16px;
+    font-weight: bold;
+}
+
+/* 
+サインイン画面
+ */
+
+ .main{
+	width: 600px;
+	padding-top: 60px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*------ form ------*/
+
+.form__title{
+	margin-bottom: 45px;
+	font-size: 30px;
+}
+
+.form__item{
+	margin-bottom: 45px;
+	text-align: left;
+}
+
+.form__item > label{
+	display: block;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.form__item > input[type="text"], .form__item > input[type="password"]{
+	width: 100%;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	line-height: 40px;
+}
+
+.form__item > input[type="submit"]{
+	width: 100%;
+}
+
+.to-user-registration{
+    padding: 10px;
+    background-color: rgb(25, 100, 45);
+    color: #fff;
+    border-radius: 12px;
+}
+
+.to-user-registration:hover{
+    background-color: rgb(189, 199, 189);
+    color: #333;
+}
+
+.signup-btn{
+    background-color: honeydew;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.signup-btn:hover{
+    background-color: rgb(189, 199, 189);
+}
+
+/* 
+ログイン画面
+*/
+
+.errorMessage{
+    color: red;
+    text-align: center;
+    margin-top: 200px;
+    font-weight: bold;
+}
+
+.login-table{
+    margin: auto;
+    margin-top: 30px;
+}
+
+.login-btn{
+    background-color: honeydew;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.login-btn:hover{
+    color: black;
+    background-color: rgb(189, 199, 189);;
+}
+
+/* 
+header
+ */
+
+.header-list{
+    justify-content: flex-end;
+}
+
+.logout-btn{
+    margin: 7px 0 0 10px;
+    background-color: red;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.logout-btn:hover{
+    color: black;
+    background-color: #fff;
+}
+
+/* 
+トップページ
+ */
+
+.top-page{
+    margin-top: 100px;
+}
+
+/*
+投稿ページ
+*/
+.post-page-top{
+    margin: 100px 0 30px 0;
+    font-weight: bold;
+}
+
+.form-btn{
+    margin: 30px 0 0 50%;
+    padding: 10px 30px;
+    border-radius: 15px
+}
+
+.post-form{
+    width: 88%;
+    margin: auto;
+}
+
+.content-area{
+    height: 120px;
+}
+
+.value-area{
+    width: 40%;
+}
+
+#genre{
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.genre-select{
+    margin: 0;
+}
+
+
+/*
+一覧ページ
+*/
+
+.book-table{
+    width: 95%;
+    margin: auto;
+}
+
+
+
+/* 
+編集ページ 
+*/
+
+.edit-btn{
+    margin-left: 50%;
+    margin-top: 30px;
+}
+
+.back-btn{
+    margin-top: 30px;
+}
+
+
+
+/* 
+詳細画面
+ */
+
+.detail-page-top{
+    font-weight: bold;
+    margin: 100px 0 30px 0;
+}
+/*
+詳細ページGooGle Books API 
+*/
+
+.google-form{
+    width: 30%;
+    position: absolute;
+}
+
+.search{
+    margin: 30px 0;
+    text-align: center;
+}
+
+
+.search #inputField {
+    background: #FFF;
+    border: solid 1px #eee;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*
+検索結果
+*/
+ul#books {
+    padding: 0;
+    list-style: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+ul#books:after {
+    content: "";
+    width: 22%;
+}
+ul#books li {
+    width: 22%;
+}
+a.bookLink {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #313131;
+}
+.bookImage {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 10px;
+}
+.bookImageInner {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: -6px 6px 10px -2px #001b4440, 0 0 3px #8f9aaf1a;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+.bookImageInner img {
+    max-height: 190px;
+}
+a.bookLink:hover > .bookImage .bookImageInner {
+    transform: scale(1.05);
+}
+.bookImageInner:after {
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
+    background: linear-gradient(-90deg,#fff0,#ffffff1a 80%,#ffffff4d 95%,#fff6 96.5%,#cbcbcb14 98%,#6a6a6a1a);
+    border-radius: 3px;
+}
+
+p.bookPublishedDate, p.bookTitle {
+    margin: 0 auto;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+p.bookPublishedDate {
+    color: #707070;
+    font-size: 0.9rem;
+    position: relative;
+    margin-bottom: 8px;
+}
+p.bookPublishedDate:before {
+    content: "\f017";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 100;
+    font-size: 0.85rem;
+    margin-right: 5px;
+    color: #707070;
+}
+a.bookLink:hover > p.bookTitle {
+    color: #3a9eff;
+}
+
+/*
+ボタン2度押し
+*/
+button#ajaxButton:disabled {
+    pointer-events: none;
+    background: #eee;
+    filter: none;
+    color: #999;
+}
+
+/* 
+検索ページ
+ */
+
+.search-form-table{
+    display: flex;
+}
+
+.search-home{
+    width: 75%;
+    margin: auto;
+}
+
+.search-table{
+    margin-top: 30px;
+}
+
+.genre-form{
+    height: 40px;
+    width: 300px;
+}
+
+/* 
+ユーザーに紐づいた投稿画面
+ */
+
+.user-details-table{
+    margin-bottom: 30px;
+}
+
+/*
+footer
+*/
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footer .font{
+    padding: 30px;
+    margin: 200px 0 0 0;
+}
+
+#footer .text{
+    background-color: rgb(191, 193, 195);
+}
+
+
+
+@media screen and (max-width: 767px) {
+    /* （ここにモバイル用スタイルを記述） */
+    ul#books li {
+        width: 41%;
+    }
+    }
+
+
+
+
+

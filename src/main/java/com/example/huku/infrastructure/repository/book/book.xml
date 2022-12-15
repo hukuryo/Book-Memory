@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.huku.infrastructure.repository.book">
+    <insert id="insert" parameterType="com..example.huku.infrastructure.repository.book.book">
+        INSERT INTO messages
+        (id, book_id, title, price, genre)
+        VALUES
+        (#{id}, #{bookId}, #{title}, #{price}, #{genre})
+    </insert>
+    <select id="find" resultType="com..example.huku.infrastructure.repository.book.book">
+        SELECT * FROM book
+        WHERE 1 = 1
+        AND book_id = #{bookId}
+        <if test="searchWord.isPresent()">
+            <bind name="word" value="searchWord.get()" />
+            AND text LIKE '%' || #{word} || '%'
+        </if>
+    </select>
+</mapper>

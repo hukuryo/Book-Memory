@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー情報編集</title>
+</head>
+<body>
+    <form class="mt-4 post-form" th:action="@{/update/{id}(id=${id})}" th:object="${user}" method="post">
+        <div class="input-group mb-3" style="width: 60%;">
+            <span class="input-group-text" id="basic-addon1">ユーザー名</span>
+            <input type="text" class="form-control col-sm-10" placeholder="BookName" aria-label="title" aria-describedby="basic-addon1" th:field="*{user.userName}" th:errorclass="invalid">
+            <div class="red" th:errors="*{user.userName}"></div>
+        </div>
+        <p class="genre-select">ジャンル選択</p>
+        <!-- <select id="genre" name="genre" class="form-select" aria-label="Default select example" th:value="${genre}" th:errorclass="invalid">
+            <option value="ミステリー" th:selected="${genre} == ミステリー">ミステリー</option>
+            <option value="ビジネス" th:selected="${genre} == ビジネス">ビジネス</option>
+            <option value="歴史・地理" th:selected="${genre} == 歴史・地理">歴史・地理</option>
+            <option value="漫画" th:selected="${genre} == 漫画">漫画</option>
+            <option value="料理" th:selected="${genre} == 料理">料理</option>
+            <option value="スポーツ" th:selected="${genre} == スポーツ">スポーツ</option>
+            <option value="子育て" th:selected="${genre} == 子育て">子育て</option>
+            <div class="red" th:errors="*{genre}"></div>
+        </select> -->
+        <!-- 内容 -->
+        <div class="input-group">
+            <span class="input-group-text">本の内容(感想)</span>
+            <!-- <textarea class="form-control" aria-label="With textarea" placeholder="content" th:field="*{content}" th:errorclass="invalid" rows="0"></textarea> -->
+            <!-- <div class="red" th:errors="*{}"></div> -->
+        </div>
+        <a class="back-btn btn btn-success" href="/user/details">戻る</a>
+    </form>
+</body>
+</html>

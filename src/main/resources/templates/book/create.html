@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>本の内容修正</title>
+    <link th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" rel="stylesheet" >
+</head>
+<body>
+    名前: [[${book.title}]]<br>
+    年齢: [[${book.favorite}]]<br>
+    メールアドレス: [[${book.content}]]<br>
+    <a href="/form">戻る</a>
+</body>
+</html>
