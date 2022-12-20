@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>ログイン画面</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
-    
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
     <!-- <div th:if="${param.error}" class="errorMessage">
@@ -32,24 +32,25 @@
     <a href="/signup">ユーザー登録</a> -->
     <main class="main">
         <form class="form" th:action="@{/login}" method="post">
-            <h1 class="form__title">ログイン</h1>
+            <h1 class="form__title"><i class="fa-sharp fa-solid fa-right-to-bracket"></i> ログイン</h1>
             <div th:if="${param.error}">
                 <p th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
                     <span class="errorMessage" th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}"></span>
                 </p>
+                
             </div>
             <p class="form__item">
-                <label for="username">ユーザーネーム</label>
+                <label for="username"><i class="fas fa-user-alt"></i> ユーザーネーム</label>
                 <input type="text" placeholder="Your Username" name="username" id="username">
             </p>
             <p class="form__item">
-                <label for="password">パスワード</label>
+                <label for="password"><i class="fa-solid fa-lock"></i> パスワード</label>
                 <input type="password" placeholder="Your Password" name="password" id="password">
             </p>
             <p class="form__item">
                 <input class="login-btn" type="submit" value="ログイン">
             </p>
-            <a href="/user/registration" class="to-user-registration">未登録の方はこちら</a>
+            <a href="/user/registration" class="to-user-registration"><i class="fa-solid fa-signature"></i>  未登録の方はこちら</a>
         </form>
     </main>
 </body>

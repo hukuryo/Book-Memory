@@ -39,7 +39,6 @@ public class BookController {
     @Autowired
     BookSearchRepository bookSearchRepository;
     
-
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -55,9 +54,14 @@ public class BookController {
     }
 
     @GetMapping("/book/search")
-	public String getList() {
-		return "book/search";
-	}
+	// public String getList() {
+	// 	return "book/search";
+	// }
+    public String index(Model model, @ModelAttribute("formModel") Book book){
+        List<Book> books = bookService.findAll();
+        model.addAttribute("books", books);
+        return "/book/search";
+    }
     
     @PostMapping("/book/search")
     // public String postDbRequest(@RequestParam("text2") String str, Model model) {
@@ -72,17 +76,18 @@ public class BookController {
     //     model.addAttribute("publisher", book.getPublisher());
     //     return "book/search";
     // }
-    // public String select(@ModelAttribute Book book, Model model) {
+    // public String select(@ModelAttribute("formModel") Book book, Model model) {
     //     // model.addAttribute("msg", "検索結果");
     //     //bookdataのゲッターで各値を取得する
     //     List<Book> result = bookService.search(book.getGenre(), book.getTitle());
     //     model.addAttribute("book", result);
     //     return "book/search";
     // }
-    public String selectOne(@RequestParam("text1") String str, Model model) {
+    public String selectAll(@RequestParam("text1") String str, Model model) {
 		model.addAttribute("bookList", bookSearchRepository.findAll(str));
 		return "book/search";
 	}
+    
 
     @GetMapping("/book/form")
     public String form(@ModelAttribute Book book, Model model){
@@ -101,15 +106,16 @@ public class BookController {
         if (result.hasErrors()){
             model.addAttribute("complete", bookRepository.findAll()); 
             return "book/form";
+            // わんちゃん間違え
         }
         bookRepository.saveAndFlush(book);
-        return "redirect:/book";
+        return "redirect:/user/detail";
     }
 
     @GetMapping("/book/delete/{id}")	
     public String remove(@PathVariable long id){	
         bookRepository.deleteById(id);	
-        return "redirect:/book";	
+        return "redirect:/user/detail";	
     }
 
     @GetMapping("/book/edit/{id}")
@@ -124,7 +130,7 @@ public class BookController {
         return "book/edit";
         }
         bookRepository.save(book);
-        return "redirect:/book";
+        return "redirect:/user/detail";
     }
 
     // @GetMapping

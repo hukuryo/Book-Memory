@@ -6,34 +6,32 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <script type="text/javascript" th:src="@{/js/demo2.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
-    <h2 class="page-top">BOOK登録</h2>
+    <h2 class="page-top">書籍投稿</h2>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
                 <div class="navbar-brand" href="/">Book Memory</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse header-list" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/user/detail">MY PAGE</a>
+                            <a class="nav-link active font" aria-current="page" href="/user/detail"><i class="fas fa-user-alt"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book">ALL BOOKLIST</a>
+                            <a class="nav-link active font" aria-current="page" href="/book/search"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book/search">BOOK SEARCH</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book/form" tabindex="-1" aria-disabled="true">POST</a>
+                            <a class="nav-link active font" aria-current="page" href="/book/form" tabindex="-1" aria-disabled="true"><i class="fa-sharp fa-solid fa-plus"></i></a>
                         </li>
                         <li class="nav-item">
                             <form  method="post" th:action="@{/logout}">
-                                <button class="logout-btn" type="submit">ログアウト</button>
+                                <button id="logout" class="logout-btn font" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                             </form>
                         </li>
                     </ul>
@@ -49,8 +47,8 @@
             <div class="red" th:errors="*{title}"></div>
         </div> 
         <!-- ジャンル選択 -->
+        <span class="genre-select-top">ジャンル選択</span>
         <select id="genre" name="genre" class="form-select genre-form" aria-label="Default select example" th:value="${genre}" th:errorclass="invalid">
-            <option selected>ジャンル選択</option>
             <option value="ミステリー" th:selected="${genre} == ミステリー">ミステリー</option>
             <option value="ビジネス" th:selected="${genre} == ビジネス">ビジネス</option>
             <option value="歴史・地理" th:selected="${genre} == 歴史・地理">歴史・地理</option>
@@ -58,6 +56,9 @@
             <option value="料理" th:selected="${genre} == 料理">料理</option>
             <option value="スポーツ" th:selected="${genre} == スポーツ">スポーツ</option>
             <option value="子育て" th:selected="${genre} == 子育て">子育て</option>
+            <option value="趣味" th:selected="${genre} == 趣味">趣味</option>
+            <option value="旅行" th:selected="${genre} == 旅行">旅行</option>
+            <option value="ダイエット" th:selected="${genre} == ダイエット">ダイエット</option>
             <div class="red" th:errors="*{genre}"></div>
         </select>
         <!-- お気に入りレベル -->
@@ -68,7 +69,7 @@
         </div>
         <!-- 価格 -->
         <div class="value-area input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">価格(円)</span>
+            <span class="input-group-text" id="basic-addon1">価格</span>
             <input type="number" class="form-control col-sm-10" placeholder="Price" aria-label="Price" aria-describedby="basic-addon1" th:field="*{price}" th:errorclass="invalid" min="0">
             <div class="red" th:errors="*{price}"></div>
         </div>

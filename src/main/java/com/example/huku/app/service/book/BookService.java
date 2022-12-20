@@ -1,9 +1,10 @@
 package com.example.huku.app.service.book;
 
 
+import java.lang.StackWalker.Option;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -27,10 +28,14 @@ public class BookService {
 
     @Autowired
     private BookDataDaoImpl bookDataDaoImpl;
+
+    // public Optional<Book> findBySearchId(long isbn) {
+    //     return bookDataRepository.findById(isbn);
+    // }
     
     
     public List<Book> findAll(){
-        return bookRepository.findAll();
+        return bookDataRepository.findAll();
     }
 
     public Book findById(long id){

@@ -15,12 +15,17 @@ ul{
     font-weight: bold;
 }
 
+.font{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
 /* 
 エラーログ 
 */
 .red{
     color: red;
-    margin: auto;
+    
 }
 
 .invalid{
@@ -134,7 +139,7 @@ header
     background-color: red;
     color: #fff;
     border-radius: 15px;
-    font-size: 15px;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -187,6 +192,12 @@ header
     margin: 0;
 }
 
+.genre-select-top{
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    border: 1px solid #cac0c0;
+}
 
 /*
 一覧ページ
@@ -211,7 +222,6 @@ header
 .back-btn{
     margin-top: 30px;
 }
-
 
 
 /* 
@@ -355,7 +365,7 @@ button#ajaxButton:disabled {
 }
 
 .genre-form{
-    height: 40px;
+    height: 38px;
     width: 300px;
 }
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>ユーザー登録</title>
 </head>
 <body>
@@ -23,20 +24,20 @@
 
     <main class="main">
         <form class="form" th:action="@{/user/registration}" method="post" th:object="${form}">
-            <h1 class="form__title">ユーザー登録</h1>
+            <h1 class="form__title"><i class="fa-solid fa-signature"></i> ユーザー登録</h1>
             <p th:if="${#fields.hasErrors('passwordValid')}" th:errors="*{passwordValid}" class="error-message"></p>
             <p class="form__item">
-                <label for="username">ユーザーネーム(20文字以内)</label>
+                <label for="username"><i class="fas fa-user-alt"></i> ユーザーネーム(20文字以内)</label>
                 <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-message"></span>
                 <input type="text" placeholder="Username" name="username" id="username">
             </p>
             <p class="form__item">
-                <label for="password">パスワード(8文字以上20文字以内)</label>
+                <label for="password"><i class="fa-solid fa-lock"></i> パスワード(8文字以上20文字以内)</label>
                 <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-message"></span>
                 <input type="password" placeholder="Password" name="password" id="password">
             </p>
             <p class="form__item">
-                <label for="confirm-password">パスワード(確認)</label>
+                <label for="confirm-password"><i class="fa-solid fa-check"></i> パスワード(確認)</label>
                 <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="error-message"></span>
                 <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirm-password">
             </p>
@@ -44,7 +45,7 @@
                 <input class="signup-btn" type="submit" value="登録完了">
             </p>
         </form>
-        <a href="/user/login" class="to-user-registration">登録済みの方はこちら</a>
+        <a href="/user/login" class="to-user-registration"><i class="fa-sharp fa-solid fa-right-to-bracket"></i> 登録済みの方はこちら</a>
     </main>
 </body>
 </html>

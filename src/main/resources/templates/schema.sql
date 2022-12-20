@@ -16,4 +16,5 @@ CREATE TABLE IF NOT EXISTS loginUser(
   email VARCHAR(64) NOT NULL,
   password VARCHAR(128) NOT NULL
   username VARCHAR(64) NOT NULL,
+  PRIMARY KEY (userId),
 );

@@ -1,5 +1,6 @@
 package com.example.huku.infrastructure.repository.book;
 
+import java.beans.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,21 +19,11 @@ public class BookSearchRepository {
     private JdbcTemplate jdbcTemplate;
 
     public List<Book> findAll(String genre) {
-
         // SELECT文
-        String query = "SELECT "
-                + " id,"
-                + " title,"
-                + " price,"
-                + " favorite,"
-                + " publisher,"
-                + " genre,"
-                + "FROM book "
-                + "WHERE genre=?";
-
+        String query = "SELECT * FROM book WHERE genre = ?" ;
         // 検索実行、mapで取得した値をemployeeクラスのインスタンスにセット
-        List<Map<String, Object>> book = jdbcTemplate.queryForList(query, genre);
-        List<Book> bookList =new ArrayList<Book>();
+        List<Map<String, Object>> book = jdbcTemplate.queryForList(query, genre);        
+        List<Book> bookList = new ArrayList<Book>();
         for(Map<String,Object> result:book)
 		{
 			Book bookAll = new Book();
@@ -45,7 +36,6 @@ public class BookSearchRepository {
 			bookAll.setPublisher((String)result.get("publisher"));
 			bookList.add(bookAll);
 		}
-
         return bookList;
     }  
 }

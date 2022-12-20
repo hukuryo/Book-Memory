@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 
 import com.example.huku.domain.models.user.User;
 
-import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -31,8 +31,12 @@ public class Book {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "userId")
-  private int userId;
+  @Column(name = "user_id")
+  private int user_id;
+
+  // @ManyToOne
+  // @JoinColumn(name = "user_id")
+  // private User user;
 
   @NotBlank
   @Column(name = "title")
@@ -64,7 +68,4 @@ public class Book {
   @Min(0)
   private Integer price;
 
-  // @ManyToOne(optional = true)
-	// @JoinColumn(name = "use", referencedColumnName = "id", insertable = false, updatable = false)
-  // private User user;
 }

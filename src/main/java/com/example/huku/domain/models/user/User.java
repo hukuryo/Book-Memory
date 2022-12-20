@@ -28,6 +28,10 @@ public class User {
 
 	@Column(name = "bookId")
 	private int bookId;
+
+	// @OneToMany
+	// private List<Book> book;
+
 	
 	@Column(name = "username")
 	private String username;

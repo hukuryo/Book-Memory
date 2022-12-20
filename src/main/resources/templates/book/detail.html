@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
     <link th:href="@{/css/style.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>内容詳細</title>
 </head>
 <body>
@@ -14,25 +16,21 @@
             <div class="container-fluid">
                 <div class="navbar-brand" href="/">Book Memory</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse header-list" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/user/detail">MY PAGE</a>
+                            <a class="nav-link active font" aria-current="page" href="/user/detail"><i class="fas fa-user-alt"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book">MY BOOKLIST</a>
+                            <a class="nav-link active font" aria-current="page" href="/book/search"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book/search">BOOK SEARCH</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/book/form" tabindex="-1" aria-disabled="true">POST</a>
+                            <a class="nav-link active font" aria-current="page" href="/book/form" tabindex="-1" aria-disabled="true"><i class="fa-sharp fa-solid fa-plus"></i></a>
                         </li>
                         <li class="nav-item">
                             <form  method="post" th:action="@{/logout}">
-                                <button id="logout" class="logout-btn" type="submit">ログアウト</button>
+                                <button id="logout" class="logout-btn font" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                             </form>
                         </li>
                     </ul>
@@ -81,7 +79,7 @@
             </div>
             <br />
             <div class="text-center">
-                <a href="/book" class="btn btn-secondary">一覧に戻る</a>
+                <a href="/user/detail" class="btn btn-secondary">マイページに戻る</a>
             </div>
             <div class="search">
                 <h4 class="display-6" style="margin-bottom: 20px;">Googleで本を検索</h4>
