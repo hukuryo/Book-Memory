@@ -38,32 +38,32 @@ public class Book {
   // @JoinColumn(name = "user_id")
   // private User user;
 
-  @NotBlank
+  @NotBlank(message = "入力必須です!")
   @Column(name = "title")
   @Size(max = 30)
   private String title;
 
-  @NotBlank
+  @NotBlank(message = "入力必須です!")
   @Column(name = "genre")
   @Size(max = 10)
   private String genre;
 
-  @NotNull
+  @NotNull(message = "入力必須です!")
   @Column(name = "favorite")
   @Min(0)
   @Max(5)
   private int favorite;
 
-  @NotBlank
+  @NotBlank(message = "入力必須です!")
   @Column(name = "content")
   @Size(max = 500)
   private String content;
 
-  @NotBlank
+  @NotBlank(message = "入力必須です!")
   @Column(name = "publisher")
   private String publisher;
 
-  @NotNull
+  @NotNull(message = "入力必須です!")
   @Column(name = "price")
   @Min(0)
   private Integer price;

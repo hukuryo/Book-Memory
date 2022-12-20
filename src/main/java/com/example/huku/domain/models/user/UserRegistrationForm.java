@@ -23,15 +23,15 @@ public class UserRegistrationForm{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
 
-    @NotBlank
+    @NotBlank(message = "必須入力です")
 	@Size(min = 0, max = 20)
 	private String username;
 	
-	@NotBlank
+	@NotBlank(message = "必須入力です")
 	@Size(min = 8, max = 20)
 	private String password;
 	
-	@NotBlank
+	@NotBlank(message = "必須入力です")
 	@Size(min = 8, max = 20)
 	private String confirmPassword;
 	

@@ -16,8 +16,8 @@ ul{
 }
 
 .font{
-    font-size: 25px;
-    margin-right: 10px;
+    font-size: 30px;
+    margin-right: 18px;
 }
 
 /* 
@@ -25,7 +25,7 @@ ul{
 */
 .red{
     color: red;
-    
+    font-weight: bold;
 }
 
 .invalid{
@@ -33,7 +33,6 @@ ul{
 }
 
 .error-message{
-	color: red;
 	font-size: 16px;
     font-weight: bold;
 }
@@ -197,6 +196,10 @@ header
     background-color: #e9ecef;
     border-radius: 5px;
     border: 1px solid #cac0c0;
+}
+
+.publisher-form{
+    width: 400px;
 }
 
 /*

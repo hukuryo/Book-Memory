@@ -42,37 +42,37 @@
         <h1 class="detail-page-top">書籍情報詳細</h1>
         <div th:object="${bookDate}">
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">書籍名</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-solid fa-book"></i> 書籍名 </div>
                 <div class="col pt-3 border">
                 <p th:text="*{title}"></p>
                 </div>
             </div>
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">ジャンル</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-sharp fa-solid fa-circle-check"></i> ジャンル</div>
                 <div class="col pt-3 border">
                 <p th:text="*{genre}"></p>
                 </div>
             </div>
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">お気に入りレベル</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-solid fa-star"></i> 5段階評価</div>
                 <div class="col pt-3 border">
                 <p th:text="*{favorite}"></p>
                 </div>
             </div>
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">価格</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-solid fa-money-bill"></i> 価格</div>
                 <div class="col pt-3 border">
                 <p th:text="*{price}"></p>
                 </div>
             </div>
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">出版社</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-solid fa-building"></i> 出版社</div>
                 <div class="col pt-3 border">
                 <p th:text="*{publisher}"></p>
                 </div>
             </div>
             <div class="row mx-md-n5">
-                <div class="col-2 pt-3 border bg-light">内容(感想)</div>
+                <div class="col-2 pt-3 border bg-light"><i class="fa-solid fa-comment"></i> 内容(感想)</div>
                 <div class="col pt-3 border">
                 <p th:text="*{content}"></p>
                 </div>
