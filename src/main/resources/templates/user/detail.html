@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <div class="navbar-brand" href="/">Book Memory</div>
+                <div class="navbar-brand" href="/"><i class="fa-solid fa-book"></i> Book Memory</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 </button>
                 <div class="collapse navbar-collapse header-list" id="navbarCollapse">
@@ -61,9 +61,9 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">タイトル</th>
+                <th scope="col">書籍名</th>
                 <th scope="col">ジャンル</th>
-                <th scope="col">お気に入りレベル</th>
+                <th scope="col">5段階評価</th>
                 <th scope="col">値段</th>
                 <th scope="col">出版社</th>
             </tr>
@@ -71,7 +71,7 @@
         <tbody>
             <tr th:each="book:${complete}" th:object="${book}">
                 <td scope="row">[[${book.id}]]</td>
-                <td><a th:href="@{/book/detail/{id}(id=${book.id})}">[[${book.title}]]</a></td>
+                <td class="list-item"><a th:href="@{/book/detail/{id}(id=${book.id})}">[[${book.title}]]</a></td>
                 <td>[[${book.genre}]]</td>
                 <td>[[${book.favorite}]]</td>
                 <td>[[${book.price}]]円</td>

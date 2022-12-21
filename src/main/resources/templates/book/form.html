@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <div class="navbar-brand" href="/">Book Memory</div>
+                <div class="navbar-brand" href="/"><i class="fa-solid fa-book"></i> Book Memory</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 </button>
                 <div class="collapse navbar-collapse header-list" id="navbarCollapse">
@@ -42,12 +42,12 @@
     <form class="mt-4 post-form" th:action="@{/create}" th:object="${book}" method="post">
         <!-- 書籍名 -->
         <div class="input-group mb-3" style="width: 60%;">
-            <span class="input-group-text" id="basic-addon1">書籍名</span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i> 書籍名</span>
             <input type="text" class="form-control col-sm-10" placeholder="BookName" aria-label="title" aria-describedby="basic-addon1" th:field="*{title}" th:errorclass="invalid">
             <div class="red" th:errors="*{title}"></div>
         </div> 
         <!-- ジャンル選択 -->
-        <span class="genre-select-top">ジャンル選択</span>
+        <span class="genre-select-top"><i class="fa-sharp fa-solid fa-circle-check"></i> ジャンル選択</span>
         <select id="genre" name="genre" class="form-select genre-form" aria-label="Default select example" th:value="${genre}" th:errorclass="invalid">
             <option value="ミステリー" th:selected="${genre} == ミステリー">ミステリー</option>
             <option value="ビジネス" th:selected="${genre} == ビジネス">ビジネス</option>
@@ -63,25 +63,25 @@
         </select>
         <!-- お気に入りレベル -->
         <div class="value-area input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">5段階評価</span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-star"></i> 5段階評価</span>
             <input type="number" class="form-control col-sm-10" placeholder="FavoriteLevel" aria-label="favorite" aria-describedby="basic-addon1" th:field="*{favorite}" th:errorclass="invalid" max="5" min="0">
             <div class="red" th:errors="*{favorite}"></div>
         </div>
         <!-- 価格 -->
         <div class="value-area input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">価格 </span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-money-bill"></i> 価格 </span>
             <input type="number" class="form-control col-sm-10" placeholder="Price" aria-label="Price" aria-describedby="basic-addon1" th:field="*{price}" th:errorclass="invalid" min="0">
             <div class="red" th:errors="*{price}"></div>
         </div>
         <!-- 出版社 -->
         <div class="input-group mb-3 publisher-form">
-            <span class="input-group-text" id="basic-addon1">出版社</span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i> 出版社</span>
             <input type="text" class="form-control col-sm-10" placeholder="publisher" aria-label="publisher" aria-describedby="basic-addon1" th:field="*{publisher}" th:errorclass="invalid">
             <p class="red" th:errors="*{publisher}"></p>
         </div>
         <!-- 内容 -->
         <div class="input-group" style="height: 120px; width: 90%;">
-            <span class="input-group-text">本の内容(感想)</span>
+            <span class="input-group-text"><i class="fa-solid fa-comment"></i>  本の内容(感想)</span>
             <textarea class="form-control content-area" aria-label="With textarea" placeholder="content" th:field="*{content}" th:errorclass="invalid" rows="0"></textarea>
             <div class="red" th:errors="*{content}"></div>
         </div>

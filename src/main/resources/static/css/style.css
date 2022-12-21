@@ -211,8 +211,6 @@ header
     margin: auto;
 }
 
-
-
 /* 
 編集ページ 
 */
@@ -358,6 +356,10 @@ button#ajaxButton:disabled {
     display: flex;
 }
 
+.search-form-top{
+    font-weight: bold;
+}
+
 .search-home{
     width: 75%;
     margin: auto;
@@ -370,6 +372,12 @@ button#ajaxButton:disabled {
 .genre-form{
     height: 38px;
     width: 300px;
+    margin-bottom: 10px;
+}
+
+.title-form{
+    width: 80%;
+    margin-bottom: 10px;
 }
 
 /* 

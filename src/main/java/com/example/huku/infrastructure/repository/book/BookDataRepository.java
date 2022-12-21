@@ -9,5 +9,4 @@ import com.example.huku.domain.models.book.Book;
 
 @Repository
 public interface BookDataRepository extends JpaRepository<Book, Long>, JpaSpecificationExecutor<Book> {
-
 }

@@ -54,9 +54,6 @@ public class BookController {
     }
 
     @GetMapping("/book/search")
-	// public String getList() {
-	// 	return "book/search";
-	// }
     public String index(Model model, @ModelAttribute("formModel") Book book){
         List<Book> books = bookService.findAll();
         model.addAttribute("books", books);
@@ -64,18 +61,6 @@ public class BookController {
     }
     
     @PostMapping("/book/search")
-    // public String postDbRequest(@RequestParam("text2") String str, Model model) {
-    //     // １件検索
-    //     Book book = bookService.findOne(str);
-    //     // 検索結果をModelに登録
-    //     model.addAttribute("bookId", book.getId());
-    //     model.addAttribute("title", book.getTitle());
-    //     model.addAttribute("genre", book.getGenre());
-    //     model.addAttribute("price", book.getPrice());
-    //     model.addAttribute("favorite", book.getFavorite());
-    //     model.addAttribute("publisher", book.getPublisher());
-    //     return "book/search";
-    // }
     // public String select(@ModelAttribute("formModel") Book book, Model model) {
     //     // model.addAttribute("msg", "検索結果");
     //     //bookdataのゲッターで各値を取得する
@@ -84,7 +69,7 @@ public class BookController {
     //     return "book/search";
     // }
     public String selectAll(@RequestParam("text1") String str, Model model) {
-		model.addAttribute("bookList", bookSearchRepository.findAll(str));
+		model.addAttribute("bookList", bookSearchRepository.findAll(str, str));
 		return "book/search";
 	}
     
@@ -106,7 +91,6 @@ public class BookController {
         if (result.hasErrors()){
             model.addAttribute("complete", bookRepository.findAll()); 
             return "book/form";
-            // わんちゃん間違え
         }
         bookRepository.saveAndFlush(book);
         return "redirect:/user/detail";
@@ -132,33 +116,6 @@ public class BookController {
         bookRepository.save(book);
         return "redirect:/user/detail";
     }
-
-    // @GetMapping
-    // public String index(Model model,@ModelAttribute("formModel") Book book) {
-
-    //     model.addAttribute("msg", "在庫管理");
-    //     model.addAttribute("msg2", "検索条件を入力してください");
-    //     List<Book> books = bookService.findAll();
-    //     model.addAttribute("books", books);
-
-    //     return "/book/search";
-    // }
-
-
-
-    // @PostMapping("/book/search")
-    // public String select(@ModelAttribute("formModel") Book book, Model model) {
-
-    //     model.addAttribute("msg", "検索結果");
-    //     //bookdataのゲッターで各値を取得する
-    //     List<Book> result = bookService.search(book.getGenre(), book.getTitle());
-    //     model.addAttribute("books", result);
-
-    //     return "/book/search";
-    // }
-
-
-
 
     //   初期データの投入
     @PostConstruct

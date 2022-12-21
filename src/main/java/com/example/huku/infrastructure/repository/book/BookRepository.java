@@ -11,5 +11,4 @@ import com.example.huku.domain.models.book.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-
 }
