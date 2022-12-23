@@ -24,15 +24,15 @@ public class UserRegistrationForm{
     private Integer userId;
 
     @NotBlank(message = "必須入力です")
-	@Size(min = 0, max = 20)
+	@Size(min = 0, max = 20, message = "20文字以内で入力してください!")
 	private String username;
 	
 	@NotBlank(message = "必須入力です")
-	@Size(min = 8, max = 20)
+	@Size(min = 8, max = 20, message = "8文字から20文字の間で入力してください!")
 	private String password;
 	
 	@NotBlank(message = "必須入力です")
-	@Size(min = 8, max = 20)
+	@Size(min = 8, max = 20, message = "8文字から20文字の間で入力してください!")
 	private String confirmPassword;
 	
 	@AssertTrue

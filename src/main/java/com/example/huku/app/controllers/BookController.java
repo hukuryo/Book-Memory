@@ -64,13 +64,6 @@ public class BookController {
     public String selectAll(@RequestParam("text1") String str, Model model) {
         model.addAttribute("bookList", bookSearchRepository.findAll(str, str));
 		return "book/search";
-        // public String select(@ModelAttribute("formModel") Book book, Model model) {
-        //     // model.addAttribute("msg", "検索結果");
-        //     //bookdataのゲッターで各値を取得する
-        //     List<Book> result = bookService.search(book.getGenre(), book.getTitle());
-        //     model.addAttribute("book", result);
-        //     return "book/search";
-        // }
 	}
     
 
@@ -124,17 +117,17 @@ public class BookController {
         suzuki.setTitle("キングダム");
         suzuki.setGenre("漫画");
         suzuki.setFavorite(4);
-        suzuki.setContent("本の内容");
-        suzuki.setPrice(1110);
+        suzuki.setContent("最高の漫画です！");
+        suzuki.setPrice(500);
         suzuki.setPublisher("集英社");
         bookRepository.saveAndFlush(suzuki);
     
         Book sato = new Book();
-        sato.setTitle("野球");
+        sato.setTitle("野球の教科書");
         sato.setGenre("スポーツ");
         sato.setFavorite(5);
-        sato.setContent("本の内容");
-        sato.setPrice(2000);
+        sato.setContent("とてもタメになりました！");
+        sato.setPrice(1400);
         sato.setPublisher("講談社");
         bookRepository.saveAndFlush(sato);
     }

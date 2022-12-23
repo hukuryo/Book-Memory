@@ -35,13 +35,14 @@ ul{
 .error-message{
 	font-size: 16px;
     font-weight: bold;
+    color: red;
 }
 
 /* 
 サインイン画面
  */
 
- .main{
+.main{
 	width: 600px;
 	padding-top: 60px;
 	margin: 0 auto;
@@ -233,6 +234,12 @@ header
     font-weight: bold;
     margin: 100px 0 30px 0;
 }
+
+.user-detail-home{
+    width: 80%;
+    margin: auto;
+}
+
 /*
 詳細ページGooGle Books API 
 */
@@ -373,6 +380,7 @@ button#ajaxButton:disabled {
     height: 38px;
     width: 300px;
     margin-bottom: 10px;
+    border: 2px solid #333;
 }
 
 .title-form{

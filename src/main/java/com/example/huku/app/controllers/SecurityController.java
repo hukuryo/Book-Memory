@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.huku.app.service.user.UserRegistrationService;
 import com.example.huku.domain.models.user.UserRegistrationForm;
 
-
-// import com.example.huku.config.SignupForm;
-// import com.example.huku.details.UserDetailsServiceImpl;
-
 @Controller
 public class SecurityController {
 

@@ -38,48 +38,52 @@
             </div>
         </nav>
     </header>
-    <div class="container user-details-table">
-        <h1 class="detail-page-top">ユーザー詳細</h1>
-        <div class="row mx-md-n5">
-            <div class="col-2 pt-3 border bg-light">ユーザー名</div>
-            <div class="col pt-3 border">
-                <p th:text="*{user.username}"></p>
+    <div class="user-detail-home">
+        <div class="container user-details-table">
+            <h1 class="detail-page-top">ユーザー詳細</h1>
+            <div class="row mx-md-n5">
+                <div class="col-2 pt-3 border bg-light">ユーザー名</div>
+                <div class="col pt-3 border">
+                    <p th:text="*{user.username}"></p>
+                </div>
             </div>
+            <!-- <div class="row mx-md-n5">
+                <div class="col-2 pt-3 border bg-light">好きなジャンル</div>
+                <div class="col pt-3 border">    
+                </div>
+            </div>
+            <div class="row mx-md-n5">
+                <div class="col-2 pt-3 border bg-light">自己紹介文</div>
+                <div class="col pt-3 border">
+                </div>
+            </div> -->
         </div>
-        <!-- <div class="row mx-md-n5">
-            <div class="col-2 pt-3 border bg-light">好きなジャンル</div>
-            <div class="col pt-3 border">    
-            </div>
-        </div>
-        <div class="row mx-md-n5">
-            <div class="col-2 pt-3 border bg-light">自己紹介文</div>
-            <div class="col pt-3 border">
-            </div>
-        </div> -->
+        <table class="table book-table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">書籍名</th>
+                    <th scope="col">ジャンル</th>
+                    <th scope="col">5段階評価</th>
+                    <th scope="col">値段</th>
+                    <th scope="col">出版社</th>
+                    <th scope="col">編集</th>
+                    <th scope="col">削除</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book:${complete}" th:object="${book}">
+                    <td scope="row">[[${book.id}]]</td>
+                    <td class="list-item"><a th:href="@{/book/detail/{id}(id=${book.id})}">[[${book.title}]]</a></td>
+                    <td>[[${book.genre}]]</td>
+                    <td>[[${book.favorite}]]</td>
+                    <td>[[${book.price}]]円</td>
+                    <td>[[${book.publisher}]]</td>
+                    <td><a class="btn btn-primary" th:href="@{/book/edit/{id}(id=${book.id})}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a id="delete-btn" class="delete-action btn btn-danger" th:href="@{/book/delete/{id}(id=${book.id})}"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table book-table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">書籍名</th>
-                <th scope="col">ジャンル</th>
-                <th scope="col">5段階評価</th>
-                <th scope="col">値段</th>
-                <th scope="col">出版社</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="book:${complete}" th:object="${book}">
-                <td scope="row">[[${book.id}]]</td>
-                <td class="list-item"><a th:href="@{/book/detail/{id}(id=${book.id})}">[[${book.title}]]</a></td>
-                <td>[[${book.genre}]]</td>
-                <td>[[${book.favorite}]]</td>
-                <td>[[${book.price}]]円</td>
-                <td>[[${book.publisher}]]</td>
-                <td><a class="btn btn-primary" th:href="@{/book/edit/{id}(id=${book.id})}"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                <td><a id="delete-btn" class="delete-action btn btn-danger" th:href="@{/book/delete/{id}(id=${book.id})}"><i class="fa-solid fa-trash"></i></a></td>
-            </tr>
-        </tbody>
-    </table>  
 </body>
 </html>
