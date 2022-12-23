@@ -61,16 +61,16 @@ public class BookController {
     }
     
     @PostMapping("/book/search")
-    // public String select(@ModelAttribute("formModel") Book book, Model model) {
-    //     // model.addAttribute("msg", "検索結果");
-    //     //bookdataのゲッターで各値を取得する
-    //     List<Book> result = bookService.search(book.getGenre(), book.getTitle());
-    //     model.addAttribute("book", result);
-    //     return "book/search";
-    // }
     public String selectAll(@RequestParam("text1") String str, Model model) {
-		model.addAttribute("bookList", bookSearchRepository.findAll(str, str));
+        model.addAttribute("bookList", bookSearchRepository.findAll(str, str));
 		return "book/search";
+        // public String select(@ModelAttribute("formModel") Book book, Model model) {
+        //     // model.addAttribute("msg", "検索結果");
+        //     //bookdataのゲッターで各値を取得する
+        //     List<Book> result = bookService.search(book.getGenre(), book.getTitle());
+        //     model.addAttribute("book", result);
+        //     return "book/search";
+        // }
 	}
     
 
