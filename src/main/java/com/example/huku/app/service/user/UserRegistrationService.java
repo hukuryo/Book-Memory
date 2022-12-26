@@ -18,6 +18,10 @@ public class UserRegistrationService {
 	
 	@Autowired
 	private UserRepository userRepository;
+
+	public User findById(Integer id){
+        return userRepository.findById(id).get();
+    }
 	
 	public void userRegistration( String username, String password) {
 		String hashedPassword = passwordEncoder.encode(password);

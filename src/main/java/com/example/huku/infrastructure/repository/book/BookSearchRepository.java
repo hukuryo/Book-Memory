@@ -20,7 +20,6 @@ public class BookSearchRepository {
     public List<Book> findAll(String title, String genre) {
 
         String query = "SELECT * FROM book WHERE title LIKE '%'||?||'%' OR genre LIKE '%'||?||'%'" ;
-        // 検索実行、mapで取得した値をemployeeクラスのインスタンスにセット
         List<Map<String, Object>> book = jdbcTemplate.queryForList(query, title, genre);
         List<Book> bookList = new ArrayList<Book>();
         for(Map<String,Object> result:book)

@@ -18,6 +18,7 @@ public class AppSecurityConfig {
         http.formLogin(login -> login
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
+                
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/", true)

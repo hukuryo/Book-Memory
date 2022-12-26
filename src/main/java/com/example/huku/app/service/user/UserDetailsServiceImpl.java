@@ -14,8 +14,6 @@ import com.example.huku.domain.models.user.User;
 import com.example.huku.infrastructure.repository.user.UserDetailsImpl;
 import com.example.huku.infrastructure.repository.user.UserRepository;
 
-
-
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired

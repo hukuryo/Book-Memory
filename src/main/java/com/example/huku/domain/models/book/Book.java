@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
+import com.example.huku.domain.models.user.User;
 
 import lombok.Data;
 
@@ -32,10 +32,6 @@ public class Book {
 
   @Column(name = "user_id")
   private int user_id;
-
-  // @ManyToOne
-  // @JoinColumn(name = "user_id")
-  // private User user;
 
   @NotBlank(message = "入力必須です!")
   @Column(name = "title")

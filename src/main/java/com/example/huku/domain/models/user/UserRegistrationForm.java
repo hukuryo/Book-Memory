@@ -2,6 +2,7 @@ package com.example.huku.domain.models.user;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +20,10 @@ import lombok.Data;
 public class UserRegistrationForm{
 
 	@Id
-    @Column(name = "id")
+    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
+
 
     @NotBlank(message = "必須入力です")
 	@Size(min = 0, max = 20, message = "20文字以内で入力してください!")
@@ -34,6 +36,8 @@ public class UserRegistrationForm{
 	@NotBlank(message = "必須入力です")
 	@Size(min = 8, max = 20, message = "8文字から20文字の間で入力してください!")
 	private String confirmPassword;
+
+	private Integer bookId;
 	
 	@AssertTrue
 	public boolean isPasswordValid() {
