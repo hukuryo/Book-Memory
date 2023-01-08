@@ -27,7 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Transactional
     public void register(String username, String password) {
-        String sql = "INSERT INTO user( name, password) VALUES(?, ?)";
+        String sql = "INSERT INTO user(name, password) VALUES(?, ?)";
         jdbcTemplate.update(sql, username, passwordEncoder.encode(password));
     }
     

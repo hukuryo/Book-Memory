@@ -19,11 +19,6 @@ public class BookDomainService {
         return bookDataRepository.findAll();
     }
 
-    //該当のID見つける
-    public Optional<Book> findById(long isbn) {
-        return bookDataRepository.findById(isbn);
-    }
-
     //保存
     public Book save(Book book) {
         return bookDataRepository.saveAndFlush(book);

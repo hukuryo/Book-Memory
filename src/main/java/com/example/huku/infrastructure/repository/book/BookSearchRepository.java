@@ -22,8 +22,7 @@ public class BookSearchRepository {
         String query = "SELECT * FROM book WHERE title LIKE '%'||?||'%' OR genre LIKE '%'||?||'%'" ;
         List<Map<String, Object>> book = jdbcTemplate.queryForList(query, title, genre);
         List<Book> bookList = new ArrayList<Book>();
-        for(Map<String,Object> result:book)
-		{
+        for(Map<String,Object> result:book){
 			Book bookAll = new Book();
 			bookAll.setId((Long)result.get("id"));
 			bookAll.setTitle((String)result.get("title"));
